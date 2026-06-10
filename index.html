@@ -202,7 +202,7 @@ const motes=new THREE.Points(ppg,new THREE.PointsMaterial({color:0xf2e6c6,size:0
 let mixer=null,shark=null,pivot=null;
 const HEAD_FLIP=0;                 // set to 1 if the shark swims tail-first
 const tmpObj=new THREE.Object3D(); // for smooth heading
-new GLTFLoader().load('https://abyss.vulk.host/assets/shark.glb',(g)=>{
+new GLTFLoader().load('https://pelagic.vulk.host/assets/shark.glb',(g)=>{
   shark=g.scene;let box=new THREE.Box3().setFromObject(shark);const sz=new THREE.Vector3();box.getSize(sz);
   const s=6.5/Math.max(sz.x,sz.y,sz.z);shark.scale.setScalar(s);
   box=new THREE.Box3().setFromObject(shark);const c=new THREE.Vector3();box.getCenter(c);shark.position.sub(c);
@@ -253,8 +253,8 @@ const CW=2.55,CH=3.6;
 const cardGeo=new THREE.ExtrudeGeometry(roundedRectShape(CW,CH,0.16),{depth:0.12,bevelEnabled:true,bevelThickness:0.03,bevelSize:0.03,bevelSegments:2});cardGeo.center();
 const cardLoader=new GLTFLoader();
 const cardDefs=[
-  {file:'https://abyss.vulk.host/assets/shark.glb',     name:'GREAT WHITE',  sub:'Apex predator', accent:'#cfe2ea', yrot:-0.35},
-  {file:'https://abyss.vulk.host/assets/fish-blue.glb', name:'EMPEROR ANGEL',sub:'Reef royalty',  accent:'#5fb6e0', yrot:-0.5},
+  {file:'https://pelagic.vulk.host/assets/shark.glb',     name:'GREAT WHITE',  sub:'Apex predator', accent:'#cfe2ea', yrot:-0.35},
+  {file:'https://pelagic.vulk.host/assets/fish-blue.glb', name:'EMPEROR ANGEL',sub:'Reef royalty',  accent:'#5fb6e0', yrot:-0.5},
 ];
 const cardLayout=[[-1.72,0,0],[1.72,0,0]];
 cardDefs.forEach((def,i)=>{
